@@ -3,6 +3,8 @@ name: Test default distribution directory
 on:
   workflow_dispatch:
 
+defaults:
+  shell: bash
 
 jobs:
 #  test:
@@ -47,7 +49,6 @@ jobs:
     steps:
     - name: Set color
       id: color-selector'
-      shell: bash
       run: echo "SELECTED_COLOR=green" >> "$GITHUB_OUTPUT"
     - name: Get color
       env:
