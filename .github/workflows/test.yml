@@ -26,8 +26,8 @@ jobs:
     - name: List directory (windows)
       if: runner.os == 'Windows'
       run: |
-        dir build /ah
-        dir build/distributions /ah
+        dir build 
+        dir build/distributions 
 
     - name: List directory (linux)
       if: runner.os == 'Linux'
