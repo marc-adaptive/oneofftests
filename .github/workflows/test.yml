@@ -5,32 +5,50 @@ on:
 
 
 jobs:
+#  test:
+#    name: test
+#    runs-on: ${{ matrix.os }}
+#    strategy:
+#      fail-fast: false
+#      matrix:
+#        os: [ 'ubuntu-latest', 'windows-latest' ]
+#    steps:
+#    - name: Setup java 17 to run the Gradle script
+#      uses: actions/setup-java@v4
+#      with:
+#        distribution: 'zulu'
+#        java-version: 17
+#    - name: Checkout
+#      uses: actions/checkout@v4
+#    - name: Tar
+#      run: |
+#        echo "file=build
+#        ./gradlew testTar
+#
+#    - name: List directory (windows)
+#      if: runner.os == 'Windows'
+#      run: |
+#        dir build
+#        dir build/distributions
+#    - name: List directory (linux)
+#      if: runner.os == 'Linux'
+#      run: |
+#        ls -la build
+#        ls -la build/distributions
+#
+
   test:
     name: test
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
-        os: [ 'ubuntu-latest', 'windows-latest' ]
+        os: [ 'ubuntu-latest', 'windows-latest', 'macos-latest' ]
     steps:
-    - name: Setup java 17 to run the Gradle script
-      uses: actions/setup-java@v4
-      with:
-        distribution: 'zulu'
-        java-version: 17
-    - name: Checkout
-      uses: actions/checkout@v4
-    - name: Tar
-      run: ./gradlew testTar
-
-    - name: List directory (windows)
-      if: runner.os == 'Windows'
-      run: |
-        dir build 
-        dir build/distributions 
-
-    - name: List directory (linux)
-      if: runner.os == 'Linux'
-      run: |
-        ls -la build
-        ls -la build/distributions
+    - name: Set color
+      id: color-selector
+      run: echo "SELECTED_COLOR=green" >> "$GITHUB_OUTPUT"
+    - name: Get color
+      env:
+        SELECTED_COLOR: ${{ steps.color-selector.outputs.SELECTED_COLOR }}
+      run: echo "The selected color is $SELECTED_COLOR"
