@@ -46,7 +46,8 @@ jobs:
         os: [ 'ubuntu-latest', 'windows-latest', 'macos-latest' ]
     steps:
     - name: Set color
-      id: color-selector
+      id: color-selector'
+      shell: bash
       run: echo "SELECTED_COLOR=green" >> "$GITHUB_OUTPUT"
     - name: Get color
       env:
