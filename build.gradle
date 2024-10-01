@@ -14,7 +14,6 @@ dependencies {
 
 tasks.register('testTar', Tar) {
     archiveFileName.set('archive.tgz')
-    destinationDirectory.set(layout.buildDirectory.dir('distributions'))
     from 'README.md'
     compression Compression.GZIP
 }

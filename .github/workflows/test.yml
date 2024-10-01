@@ -1,4 +1,4 @@
-name: Continuous Integration
+name: Test default distribution directory
 
 on:
   workflow_dispatch:
@@ -22,7 +22,15 @@ jobs:
       uses: actions/checkout@v4
     - name: Tar
       run: ./gradlew testTar
-    - name: List directory
-      run : |
-        sudo apt-get update && apt-get install tree -y
-        tree -a
+
+    - name: List directory (windows)
+      if: runner.os == 'Windows'
+      run: |
+        dir build /ah
+        dir build/distributions /ah
+
+    - name: List directory (linux)
+      if: runner.os == 'Linux'
+      run: |
+        ls -la build
+        ls -la build/distributions
