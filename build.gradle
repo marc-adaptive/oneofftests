@@ -1,0 +1,20 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+}
+
+tasks.register('testTar', Tar) {
+    archiveFileName.set('archive.tgz')
+    destinationDirectory.set(layout.buildDirectory.dir('distributions'))
+    from 'README.md'
+    compression Compression.GZIP
+}

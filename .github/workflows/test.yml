@@ -1,0 +1,28 @@
+name: Continuous Integration
+
+on:
+  workflow_dispatch:
+
+
+jobs:
+  test:
+    name: test
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ 'ubuntu-latest', 'windows-latest' ]
+    steps:
+    - name: Setup java 17 to run the Gradle script
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'zulu'
+        java-version: 17
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Tar
+      run: ./gradlew testTar
+    - name: List directory
+      run : |
+        sudo apt-get update && apt-get install tree -y
+        tree -a
