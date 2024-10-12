@@ -47,7 +47,7 @@ jobs:
     - name: Set color
       id: color-selector
       run: echo "color=green" >> "$GITHUB_OUTPUT"
-      shell: bash
+#      shell: bash
     - name: Get color
       if: always() && steps.color-selector.outputs.color == 'green'
       env:
