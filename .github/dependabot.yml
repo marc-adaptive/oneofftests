@@ -10,15 +10,15 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
-      time: "11:02"
+      time: "11:05"
       timezone: "America/New_York"
     allow:
-      dependency-name: "com.weareadaptive*"
+    - dependency-name: "com.weareadaptive*"
     groups:
       hydra:
         patterns:
         - "com.weareadaptive*"
     registries:
     - "hydra-artifactory"
-    versioning-strategy: "increase"
+    versioning-strategy: increase
 
