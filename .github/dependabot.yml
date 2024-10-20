@@ -2,7 +2,7 @@ version: 2
 registries:
   hydra-artifactory:
     type: maven-repository
-    url: ${{secrets.URI}}
+    url: https://weareadaptive.jfrog.io/artifactory/hydra-release/
     username: ${{secrets.USERNAME}}
     password: ${{secrets.PASSWORD}}
 updates:
