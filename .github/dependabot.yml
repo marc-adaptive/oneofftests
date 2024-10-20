@@ -2,9 +2,9 @@ version: 2
 registries:
   hydra-artifactory:
     type: maven-repository
-    url: ${{ secrets.adaptive_uri }}
-    username: ${{ secrets.adaptive_username }}
-    password: ${{ secrets.adaptive_password }}
+    url: ${{secrets.adaptive_uri}}
+    username: ${{secrets.adaptive_username}}
+    password: ${{secrets.adaptive_password}}
 updates:
   - package-ecosystem: "gradle"
     directory: "/"
