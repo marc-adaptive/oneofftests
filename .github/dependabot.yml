@@ -3,14 +3,14 @@ registries:
   hydra-artifactory:
     type: maven-repository
     url: https://weareadaptive.jfrog.io/artifactory/hydra-release/
-    username: ${{secrets.adaptive_username}}
-    password: ${{secrets.adaptive_password}}
+    username: ${{secrets.USERNAME}}
+    password: ${{secrets.PASSWORD}}
 updates:
   - package-ecosystem: "gradle"
     directory: "/"
     schedule:
       interval: "daily"
-      time: "11:18"
+      time: "11:24"
       timezone: "America/New_York"
     allow:
     - dependency-name: "com.weareadaptive*"
