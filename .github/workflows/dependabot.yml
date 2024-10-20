@@ -1,0 +1,24 @@
+version: 2
+registries:
+  hydra-artifactory:
+    type: maven-repository
+    url: ${{ secrets.url }}
+    username: ${{ secrets.username }}
+    password: ${{ secrets.password }}
+updates:
+  - package-ecosystem: "gradle"
+    directory: "/"
+    schedule:
+      interval: "daily"
+      time: "11:00"
+      timezone: "America/New_York"
+    allow:
+      dependency-name: "com.weareadaptive*"
+    groups:
+      hydra:
+        patterns:
+        - "com.weareadaptive*"
+    registries:
+    - "hydra-artifactory"
+    versioning-strategy: "increase"
+

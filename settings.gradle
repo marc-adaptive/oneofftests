@@ -1,2 +1,29 @@
-rootProject.name = 'oneofftests'
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        mavenCentral()
+        maven {
+            url = adaptive_uri
+            credentials {
+                username = adaptive_username
+                password = adaptive_password
+            }
+        }
+    }
+}
+
+dependencyResolutionManagement {
+    repositories {
+        mavenCentral()
+        maven {
+            url = adaptive_uri
+            credentials {
+                username = adaptive_username
+                password = adaptive_password
+            }
+        }
+    }
+}
+
+rootProject.name = "oneofftests"
 

@@ -1,15 +1,13 @@
 plugins {
     id 'java'
+    alias(libs.plugins.hydra.code.gen)
 }
 
 group = 'org.example'
 version = '1.0-SNAPSHOT'
 
-repositories {
-    mavenCentral()
-}
-
 dependencies {
+    implementation(libs.hydra.cluster)
 }
 
 tasks.register('testTar', Tar) {

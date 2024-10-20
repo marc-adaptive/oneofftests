@@ -1,0 +1,28 @@
+name: Continuous Integration
+
+on:
+  workflow_dispatch:
+  pull_request:
+    types: [opened]
+    branches:
+      - master
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+      - name: Setup java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: 17
+      - name: Build with Gradle
+        run: ./gradlew build -Padaptive_uri=${{ secrets.adaptive_uri }} -Padaptive_username=${{ secrets.adaptive_username }} -Padaptive_password=${{ secrets.adaptive_password }}
