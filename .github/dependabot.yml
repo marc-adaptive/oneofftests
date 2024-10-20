@@ -20,5 +20,4 @@ updates:
         - "com.weareadaptive*"
     registries:
     - "hydra-artifactory"
-    versioning-strategy: increase
 
