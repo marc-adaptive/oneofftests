@@ -10,7 +10,7 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
-      time: "11:15"
+      time: "11:18"
       timezone: "America/New_York"
     allow:
     - dependency-name: "com.weareadaptive*"
