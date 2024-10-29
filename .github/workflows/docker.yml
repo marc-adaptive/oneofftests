@@ -14,4 +14,7 @@ jobs:
       - name: Docker context
         run: |
           docker buildx ls
+          echo '----------------'
           docker context ls
+          echo '----------------'
+          docker images
