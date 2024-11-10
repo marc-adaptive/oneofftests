@@ -9,4 +9,4 @@ jobs:
     steps:
       - name: Docker context
         run: |
-          sudo systemctl is-active docker.service
+          systemctl is-active docker.service
