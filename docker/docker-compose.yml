@@ -4,10 +4,9 @@ services:
     image: 'local/test'
     hostname: node0-driver
     ipc: "shareable"
-    environment:
     networks:
       aeron:
-        ipv4_address: 172.30.3.1
+        ipv4_address: 172.30.3.10
 
 networks:
   aeron:
