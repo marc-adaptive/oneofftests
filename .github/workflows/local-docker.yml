@@ -1,4 +1,4 @@
-name: Docker
+name: Local Docker
 
 on:
   workflow_dispatch:
