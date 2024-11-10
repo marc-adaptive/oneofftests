@@ -11,5 +11,6 @@ jobs:
         run: |
           systemctl is-active docker.service
           docker context ls
+      - uses: actions/checkout@v4
       - name: Docker build
-        run: docker buildx build -f docker/Dockerfile docker
+        run: docker build -f docker/Dockerfile docker -t local/test
