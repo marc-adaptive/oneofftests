@@ -10,4 +10,4 @@ jobs:
       - name: Docker context
         run: |
           systemctl is-active docker.service
-          docker build docker -t local/test
+          which docker
