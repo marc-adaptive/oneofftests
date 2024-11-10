@@ -10,4 +10,5 @@ jobs:
       - name: Docker context
         run: |
           systemctl is-active docker.service
-          which docker
+          docker context ls
+          docker ps -a
