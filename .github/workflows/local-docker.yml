@@ -1,0 +1,12 @@
+name: Docker
+
+on:
+  workflow_dispatch:
+
+jobs:
+  docker:
+    runs-on: self-hosted
+    steps:
+      - name: Docker context
+        run: |
+          sudo systemctl is-active docker.service
