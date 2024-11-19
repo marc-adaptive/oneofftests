@@ -2,7 +2,7 @@
 # https://docs.gradle.org/current/userguide/platforms.html#sub::toml-dependencies-format
 
 [versions]
-hydra = "4.69.0"
+hydra = "4.74.0"
 
 [libraries]
 hydra-cluster = { module = "com.weareadaptive:hydra-cluster-core", version.ref = "hydra" }
