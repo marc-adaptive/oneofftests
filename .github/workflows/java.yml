@@ -1,0 +1,19 @@
+name: Java
+
+on:
+  workflow_dispatch:
+
+jobs:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+      - name: Setup java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: 17
+      - name: echo
+        run: echo ${JAVA_HOME}
