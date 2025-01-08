@@ -10,6 +10,7 @@ jobs:
     steps:
       - name: Set color
         id: color-selector
-        run: |
-          echo '${{ format('{{"CorrelationId":"{0}:{1}:{2}:{3}"}}', github.repository, github.run_id, github.run_number, github.run_attempt) }}'
+        run: >
+          echo 
+          '${{ format('{{Hello {0} {1} {2}!}}', 'Mona', 'the', 'Octocat') }}'
           
