@@ -20,5 +20,5 @@ jobs:
             --header '${{ format('x-amz-security-token: {0}', env.test) }}'
             --data '${{ format('{{"CorrelationId":"{0}:{1}:{2}:{3}"}}', github.repository, github.run_id, github.run_number, github.run_attempt) }}'
             --aws-sigv4 '${{ format('aws:amz:{0}:lambda', env.test) }}'
-            --url 'google.com/register'
+            --url google.com/register
           
