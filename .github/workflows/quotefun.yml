@@ -1,0 +1,14 @@
+name: quote fun
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: test
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Set color
+        id: color-selector
+        run: echo '${{ format('{"CorrelationId":"{0}:{1}:{2}:{3}"}', github.repository, github.run_id, github.run_number, github.run_attempt) }}'
+
