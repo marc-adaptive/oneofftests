@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Set color
         id: color-selector
-        run: >
+        run: |
           curl -fsSL --max-time 30 \
             --user '${{ format('{0}:{1}', env.test, env.test) }}' \
             --header 'Content-Type: application/json; charset=utf-8' \
